@@ -31,3 +31,22 @@ ol.plain li::before{content:counter(step);position:absolute;left:0;top:6px;width
 .links{display:flex;flex-wrap:wrap;gap:10px;}
 .links a{font-size:14px;text-decoration:none;color:var(--accent);border:1px solid var(--border);border-radius:7px;padding:8px 14px;}
 .links a:hover{border-color:var(--accent);}
+
+/* ---- Epic touches (Home + Services only) ---- */
+body.epic{--glow:#5FD1C4;--deep:#16232C;}
+.page-hero{position:relative;overflow:hidden;border-radius:12px;padding:44px 32px 36px;margin-bottom:28px;color:#fff;
+  background:linear-gradient(135deg,var(--deep) 0%,var(--accent) 100%);
+  box-shadow:0 0 0 1px var(--accent),0 10px 30px rgba(22,35,44,.35);
+  animation:heroIn .7s ease-out both;}
+.page-hero::before{content:"";position:absolute;top:-40%;right:-10%;width:60%;height:200%;
+  background:linear-gradient(100deg,transparent 45%,rgba(95,209,196,.22) 50%,transparent 55%);transform:rotate(8deg);}
+.page-hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--glow),transparent);}
+.page-hero .page-title{position:relative;color:#fff;margin:0 0 8px;text-shadow:0 0 24px rgba(95,209,196,.45);}
+.page-hero .page-sub{position:relative;color:#C9D6DC;margin:0 0 20px;}
+.chips{position:relative;display:flex;flex-wrap:wrap;gap:8px;}
+.chips span{font-size:13px;color:var(--glow);border:1px solid rgba(95,209,196,.5);border-radius:999px;padding:4px 12px;background:rgba(95,209,196,.08);}
+body.epic section{border-left:4px solid var(--accent);transition:border-color .2s,box-shadow .2s;}
+body.epic section:hover{border-left-color:var(--glow);box-shadow:0 4px 16px rgba(47,72,88,.15);}
+body.epic section h2{font-size:17px;}
+@keyframes heroIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+@media (prefers-reduced-motion:reduce){.page-hero{animation:none;}body.epic section{transition:none;}}
